@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="758.0" prefWidth="544.0" style="-fx-background-color: #9e9191; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculator.CalculatorController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="249.0" onMouseClicked="#ACClicked" prefHeight="90.0" prefWidth="53.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="AC" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="87.0" layoutY="249.0" onMouseClicked="#delClicked" prefHeight="90.0" prefWidth="54.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="del" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="471.0" layoutY="249.0" onMouseClicked="#divClicked" prefHeight="90.0" prefWidth="54.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="/" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="62.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="414.0" layoutY="349.0" onMouseClicked="#mulClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="X" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="414.0" layoutY="454.0" onMouseClicked="#subClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="-" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="72.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="414.0" layoutY="555.0" onMouseClicked="#plusClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="+" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="68.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="655.0" onMouseClicked="#zeroClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="42.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="249.0" onMouseClicked="#pointClicked" prefHeight="90.0" prefWidth="54.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="58.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="288.0" layoutY="655.0" onMouseClicked="#eClicked" prefHeight="90.0" prefWidth="114.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="e" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="42.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="414.0" layoutY="655.0" onMouseClicked="#equalClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="=" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="58.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="555.0" onMouseClicked="#oneClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="1" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="42.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="455.0" onMouseClicked="#fourClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="4" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="42.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="349.0" onMouseClicked="#sevenClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="7" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="42.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="555.0" onMouseClicked="#twoClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="2" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="42.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="455.0" onMouseClicked="#fiveClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="5" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="42.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="349.0" onMouseClicked="#eightClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="8" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="42.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="288.0" layoutY="555.0" onMouseClicked="#threeClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="3" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="42.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="288.0" layoutY="455.0" onMouseClicked="#sixClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="6" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="42.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="281.0" layoutY="349.0" onMouseClicked="#nineClicked" prefHeight="90.0" prefWidth="113.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="9" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="42.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="655.0" onMouseClicked="#piClicked" prefHeight="90.0" prefWidth="114.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="pi" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="25.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9e9191" height="228.0" layoutX="29.0" layoutY="13.0" stroke="BLACK" strokeType="INSIDE" width="484.0" />
+      <Label fx:id="screen" alignment="TOP_LEFT" layoutX="35.0" layoutY="20.0" prefHeight="214.0" prefWidth="471.0" wrapText="true">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="338.0" layoutY="249.0" onMouseClicked="#factClicked" prefHeight="90.0" prefWidth="54.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="48.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="408.0" layoutY="249.0" onMouseClicked="#powClicked" prefHeight="90.0" prefWidth="54.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="^" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="58.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="165.0" layoutY="249.0" onMouseClicked="#openPClicked" prefHeight="90.0" prefWidth="46.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="(" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="48.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="215.0" layoutY="249.0" onMouseClicked="#closePClicked" prefHeight="90.0" prefWidth="46.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text=")" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Sylfaen" size="48.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
