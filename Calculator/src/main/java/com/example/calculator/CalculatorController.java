@@ -52,6 +52,9 @@ public class CalculatorController {
     void equalClicked(MouseEvent event) {
         try {
             CalculateByStack calculateByStack = new CalculateByStack(screen.getText());
+            double result = calculateByStack.calculate(calculateByStack.stack);
+            if (result % 1 == 0) screen.setText(String.valueOf((long) result));     //remove 0 after point
+            else screen.setText(String.valueOf(result));
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Try again!");
