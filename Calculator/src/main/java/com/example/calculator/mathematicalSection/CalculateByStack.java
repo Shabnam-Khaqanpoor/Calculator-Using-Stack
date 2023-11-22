@@ -47,6 +47,80 @@ public class CalculateByStack {
     }
 
 
+
+    public void calcPowers(LinkedStack<String> signs, LinkedStack<Double> helpStack, LinkedStack<Double> inputStack, LinkedStack<String> signs2) {
+        while (!signs.isEmpty()) {
+            double popElement = inputStack.pop();                    //calculate power
+            if (signs.top().equals("^")) {
+                inputStack.push(Math.pow(inputStack.pop(),popElement));
+                signs.pop();
+
+            } else {              //spilt others functions
+                helpStack.push(popElement);
+                signs2.push(signs.pop());
+            }
+
+        }
+
+        if (!inputStack.isEmpty()) helpStack.push(inputStack.pop());
+
+        while (!signs.isEmpty()) {                   //do it till finished powers
+            if (inputStack.isEmpty()) {
+                while (!helpStack.isEmpty()) inputStack.push(helpStack.pop());
+            }
+            calcPowers(signs, inputStack, helpStack, signs2);
+        }
+
+    }
+
+    public void calcMulAndDiv(LinkedStack<String> signs, LinkedStack<Double> helpStack, LinkedStack<Double> inputStack, LinkedStack<String> signs2) {
+        while (!signs.isEmpty()) {
+            double popElement = helpStack.pop();     //calculate * and /
+            if (signs.top().equals("x")) {
+                helpStack.push(popElement * helpStack.pop());
+                signs.pop();
+
+            } else if (signs.top().equals("/")) {
+                helpStack.push(popElement / helpStack.pop());
+                signs.pop();
+
+            } else               //spilt + and -
+            {
+                inputStack.push(popElement);
+                signs2.push(signs.pop());
+            }
+        }
+
+        if (!helpStack.isEmpty()) inputStack.push(helpStack.pop());
+
+        while (!signs.isEmpty()) {
+            if (helpStack.isEmpty()) {
+                while (!inputStack.isEmpty()) helpStack.push(inputStack.pop());   //do it till finished * and /
+            }
+            calcMulAndDiv(signs2, inputStack, helpStack, signs);
+        }
+
+    }
+
+    public void calcPlusAndSub(LinkedStack<String> signs, LinkedStack<Double> helpStack,LinkedStack<String> signs2, LinkedStack<Double> inputStack) {
+        while (!signs2.isEmpty())signs.push(signs2.pop());
+        while (!inputStack.isEmpty())helpStack.push(inputStack.pop());
+
+        while (!signs.isEmpty()) {                 //calculate the remain elements
+            double popElement = helpStack.pop();
+            if (signs.top().equals("+")) {
+                helpStack.push(popElement + helpStack.pop());
+                signs.pop();
+
+            } else if (signs.top().equals("-")) {
+                helpStack.push(popElement-helpStack.pop());
+                signs.pop();
+            }
+        }
+
+    }
+
+
     public double calculate(LinkedStack<String> inputStack) throws Exception {
         StringBuilder number = new StringBuilder();
         LinkedStack<Double> helpStack = new LinkedStack<>();
@@ -96,7 +170,23 @@ public class CalculateByStack {
 
         if (!number.isEmpty()) helpStack.push(Double.parseDouble(number.toString()));              //the last element
 
-        double result=0;
+        double result;
+
+
+                LinkedStack<Double> linkedStack = new LinkedStack<>();
+
+        if (!signs.isEmpty()) {
+            LinkedStack<String> signs2 = new LinkedStack<>();
+
+            calcPowers(signs, linkedStack,helpStack, signs2);   //calculate powers
+
+            calcMulAndDiv(signs2, linkedStack, helpStack, signs);   //calculate * and /
+
+            calcPlusAndSub(signs2,linkedStack,signs, helpStack);                  //calculate + and -
+
+            if (helpStack.isEmpty()) result = linkedStack.pop();            //show result
+            else result = helpStack.pop();
+        } else result = helpStack.pop();
 
 
         return result;
