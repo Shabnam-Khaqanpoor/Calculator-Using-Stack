@@ -108,11 +108,6 @@
          </font>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9e9191" height="228.0" layoutX="29.0" layoutY="13.0" stroke="BLACK" strokeType="INSIDE" width="484.0" />
-      <Label fx:id="screen" alignment="TOP_LEFT" layoutX="35.0" layoutY="20.0" prefHeight="214.0" prefWidth="471.0" wrapText="true">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="338.0" layoutY="249.0" onMouseClicked="#factClicked" prefHeight="90.0" prefWidth="54.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text="!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Sylfaen" size="48.0" />
@@ -131,6 +126,11 @@
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="215.0" layoutY="249.0" onMouseClicked="#closePClicked" prefHeight="90.0" prefWidth="46.0" style="-fx-background-radius: 360; -fx-background-color: #867E89; -fx-border-radius: 360; -fx-border-color: #000000;" text=")" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Sylfaen" size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="screen" alignment="TOP_LEFT" layoutX="36.0" layoutY="21.0" prefHeight="214.0" prefWidth="470.0">
+         <font>
+            <Font size="24.0" />
          </font>
       </Label>
    </children>

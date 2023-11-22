@@ -13,12 +13,12 @@ public class CalculateByStack {
     }
 
     void fillStack() throws Exception {
-        if(this.input[0].equals("^")||this.input[0].equals("/")||this.input[0].equals(" ")||this.input[0].equals("!"))throw Exception;
+        if(this.input[0].equals("^")||this.input[0].equals("/")||this.input[0].equals(" ")||this.input[0].equals("!")||this.input[0].equals(")"))throw Exception;
 
         for (int i = this.input.length - 1; i >= 0; i--) {            //fill stack without errors
 
             if (!this.stack.isEmpty()) {
-                if (this.stack.top().equals("(") && (!this.input[i].equals("^") && !this.input[i].equals("/") && !this.input[i].equals("+") && !this.input[i].equals("-") && !this.input[i].equals(" ")))
+                if (this.stack.top().equals("(") && (!this.input[i].equals("^") && !this.input[i].equals("/") && !this.input[i].equals("+") && !this.input[i].equals("-") && !this.input[i].equals(" ") && !this.input[i].equals("(")))
                     throw Exception;
                 if (this.stack.top().equals(")") && (this.input[i].equals("x") || this.input[i].equals("/") || this.input[i].equals("+") || this.input[i].equals("-") || this.input[i].equals("^")))
                     throw Exception;
@@ -125,24 +125,36 @@ public class CalculateByStack {
         StringBuilder number = new StringBuilder();
         LinkedStack<Double> helpStack = new LinkedStack<>();
         LinkedStack<String> signs = new LinkedStack<>();
+        int counter=0;
 
-        if (inputStack.top().equals("-"))helpStack.push(Double.valueOf(inputStack.pop()+inputStack.pop()));
-        else if(inputStack.top().equals("+"))inputStack.pop();           //- or + of the first
+        String sub=inputStack.pop();          //check - first of a sentence
+
+        if (sub.equals("-") && !inputStack.top().equals("("))helpStack.push(Double.valueOf(sub+inputStack.pop()));
+        else if (sub.equals("-"))number.append(sub);
+        else inputStack.push(sub);
 
         while (!inputStack.isEmpty()) {
             if (inputStack.top().equals("(")) {
                 inputStack.pop();
                 LinkedStack<String> parentheses = new LinkedStack<>();
                 LinkedStack<String> reverseParentheses = new LinkedStack<>();
-                while (!inputStack.top().equals(")")) {         //spilt parentheses and calculate again
+                while (!(counter ==-1)) {         //spilt parentheses and calculate again
+                    if (inputStack.top().equals("("))counter++;
+                    if (inputStack.top().equals(")"))counter--;
                     parentheses.push(inputStack.pop());
                 }
 
+                parentheses.pop();
+
                 while (!parentheses.isEmpty()) reverseParentheses.push(parentheses.pop());         //reverse
 
-                if (inputStack.isEmpty()) throw Exception;
-                inputStack.pop();
+
                 number.append(calculate(reverseParentheses));
+
+                if (number.charAt(0)=='-'){                         //manage signs before number
+                    if (number.charAt(1)=='-')number.delete(0,2);
+                    else if (number.charAt(1)=='+')number.deleteCharAt(1);
+                } else if (number.charAt(0)=='+')number.deleteCharAt(0);
 
             } else if (inputStack.top().equals("!")) {           //calculate factorial first
                 inputStack.pop();
