@@ -1,18 +1,18 @@
-# Stack-based-Calculator 📊🔢
+# Stack-based-Calculator 
 
-## Overview 🚀
+## Overview 
 
 This program implements a **calculator** that performs mathematical operations using a **stack-based** approach. It processes mathematical expressions like addition, subtraction, multiplication, division, exponentiation, and factorials. The program utilizes a custom `LinkedStack` class to manage operations and follows standard **operator precedence** rules.
 
-## Features 🌟
+## Features 
 
-- **Basic Arithmetic** ➕➖✖️➗: Supports addition, subtraction, multiplication, division, and exponentiation.
-- **Factorial Calculation** ❗: Computes the factorial of integers.
-- **Parentheses Handling** 🟢🔴: Handles expressions with parentheses correctly.
-- **Constants** 🌍📏: Supports constants like Euler's number (`e`) and pi (`p`).
-- **Operator Precedence** ⏳: Correctly evaluates operations in the order of precedence using stacks.
+- **Basic Arithmetic** : Supports addition, subtraction, multiplication, division, and exponentiation.
+- **Factorial Calculation** : Computes the factorial of integers.
+- **Parentheses Handling** : Handles expressions with parentheses correctly.
+- **Constants** : Supports constants like Euler's number (`e`) and pi (`p`).
+- **Operator Precedence** : Correctly evaluates operations in the order of precedence using stacks.
 
-### Key Methods 🛠️
+### Key Methods 
 
 1. **`fillStack()`**:
    - Fills the stack with the individual elements of the input expression.
@@ -34,13 +34,13 @@ This program implements a **calculator** that performs mathematical operations u
    - The main calculation function that processes the input expression and returns the result.
    - It manages the entire sequence of operations by calling helper functions like `calcPowers`, `calcMulAndDiv`, and `calcPlusAndSub`.
 
-## Error Handling ⚠️
+## Error Handling 
 
 - The calculator throws an **exception** if the input expression contains invalid characters or malformed operations. For example:
   - Operators cannot be placed at the beginning or end of an expression.
   - Invalid usage of factorial (`!`) or mismatched parentheses will throw an exception.
 
-### Input Format 📝
+### Input Format 
 - The input is a **string** containing the mathematical expression to be evaluated.
 - **Operators**: `+`, `-`, `x`, `/`, `^`, `!`
 - **Constants**: `e` for Euler's number, `p` for pi
