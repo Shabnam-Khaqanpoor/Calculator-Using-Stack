@@ -47,8 +47,8 @@ This program implements a **calculator** that performs mathematical operations u
 - **Parentheses**: `()` for grouping
 - Example: `"3+5*(2^3)-6"`
 
-### Output Format 📊
+### Output Format 
 - The output will be the **result** of the expression after evaluation.
 
-## Dependencies 📦
+## Dependencies 
 - The program requires a `LinkedStack` class that is used to manage the stack operations. Ensure this class is defined in your project.
